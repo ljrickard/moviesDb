@@ -1,10 +1,9 @@
-<movie-nav></movie-nav>
-<div class='container'>
+<div class='movies-list'>
 	<div class='jumbotron' ng-show='loading'><h1>Loading.....</h1></div>
 	<h1>{{title}}</h1>
 
 	<div class='row'>
-		<div ng-repeat="movie in movieList">
+		<div class='movie-item' ng-repeat="movie in movieList">
 			<movie-info-box info="movie"></movie-info-box>
 		</div>
 	</div>

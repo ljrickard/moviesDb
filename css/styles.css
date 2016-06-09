@@ -1,0 +1,10 @@
+
+/* List Movies */
+.movies-list .row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.movies-list .movie-item {
+	width: 20%;
+	padding: 15px;
+}

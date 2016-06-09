@@ -3,6 +3,7 @@
   <head>
       <title>Angular Movies DB Project</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 	
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
@@ -10,11 +11,24 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div ng-view>
+    <div class="container">
+      <!-- Using custom directive -->
+      <movie-nav></movie-nav>
+      <!-- Using built in directive with controllers -->
+      <div ng-view></div>
+      <!-- Using built in directive without controllers -->
+      <footer ng-include src="'templates/footer.html'"></footer>
     </div>
   </body>
   <script src='javascript/app.js'></script>
-  <script src='javascript/controller.js'></script>
+  
+  <script src='javascript/controllers.module.js'></script>
+  <script src='javascript/controllers/MovieListController.js'></script>
+  <script src='javascript/controllers/MovieNowPlayingController.js'></script>
+  <script src='javascript/controllers/MovieTopRatedController.js'></script>
+  <script src='javascript/controllers/MovieUpcomingController.js'></script>
+  <script src='javascript/controllers/MovieDetailsController.js'></script>
+  
   <script src='javascript/directive.js'></script>
   <script src='javascript/service.js'></script>
 </html>

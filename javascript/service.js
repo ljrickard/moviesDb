@@ -1,4 +1,5 @@
-angular.module('movieDBServices',[]).factory('MovieListService',function($http) {
+angular.module('movieDBServices',[])
+.factory('MovieService',function($http) {
 //   
     return  { getList: getList };
 

@@ -1,5 +1,10 @@
 // defining the app module of the project
-angular.module('moviesDBApp', ['ngRoute','movieDBControllers','movieDBDirectives','movieDBServices'])
+angular.module('moviesDBApp', [
+	'ngRoute',
+	'movieDBControllers', // container of controllers
+	'movieDBDirectives',
+	'movieDBServices'
+	])
 .constant("myMovieConfig", {
         "moviesEndpoint" : "https://api.themoviedb.org/3/movie",
         "apiKey": "778083a2f93090ad5fc8e4f1aeac745f"
@@ -22,6 +27,10 @@ angular.module('moviesDBApp', ['ngRoute','movieDBControllers','movieDBDirectives
 		  .when("/nowPlaying", {
 			templateUrl: "templates/movies.html",
 			controller: "MovieNowPlayingController"
+		})
+		 .when("/movie/:movieId", {
+			templateUrl: 'templates/movie-detail.html',
+			controller: "MovieDetailsController"
 		})
 		  .otherwise({redirectTo: '/popular'}); 
 	});
