@@ -12,25 +12,13 @@ angular.module('moviesDBApp', [
 .config(function($routeProvider) {
 		 
 		$routeProvider
-		  .when('/popular', {
-		  	templateUrl: 'templates/movies.html',
-		  	controller: 'MovieListController'
-		  })
 		  .when('/upcoming', {
 		  	templateUrl: 'templates/movies.html',
 			controller: 'MovieUpcomingController'
 		  })
-		  .when('/topRated', {
-		  	templateUrl: 'templates/movies.html',
-			controller: 'MovieTopRatedController'
-		  })
-		  .when("/nowPlaying", {
-			templateUrl: "templates/movies.html",
-			controller: "MovieNowPlayingController"
-		})
 		 .when("/movie/:movieId", {
 			templateUrl: 'templates/movie-detail.html',
 			controller: "MovieDetailsController"
 		})
-		  .otherwise({redirectTo: '/popular'}); 
+		  .otherwise({redirectTo: '/upcoming'}); 
 	});
