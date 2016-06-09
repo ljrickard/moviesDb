@@ -4,14 +4,12 @@ angular.module('movieDBControllers')
         $scope.title = 'Upcoming Movies'
         var url = myMovieConfig.moviesEndpoint + '/upcoming?api_key=' + myMovieConfig.apiKey;
 
-        // function releaseDate(a,b){
-        //     return new Date(a.release_date) - new Date(b.release_date);
-        // }
+        function releaseDate(a,b){
+            return new Date(a.release_date) - new Date(b.release_date);
+        }
 
         function sortMoviesByReleaseDate(result){
-            return result.data.results.sort(function(a,b) {
-                return new Date(a.release_date) - new Date(b.release_date);
-            });
+            return result.data.results.sort(releaseDate);
         }
 
         function groupMoviesByReleaseDate(result){
@@ -32,11 +30,4 @@ angular.module('movieDBControllers')
             function(error) {
                 console.log('error', error)
             });
-
-        // date calculations
-        // var todaysDate=new Date();
-        // var numOfDaysTilFriday=todaysDate.getDay()==6?5:5-todaysDate.getDay();
-        // var nextFridaysDate=new Date().setDate(todaysDate.getDate() + numOfDaysTilFriday);
-
-        // $scope.nextFridaysDate=nextFridaysDate;
     });
