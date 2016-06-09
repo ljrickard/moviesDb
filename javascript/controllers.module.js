@@ -1,1 +1,1 @@
-angular.module('movieDBControllers', [])
+angular.module('movieDBControllers', ['underscore'])

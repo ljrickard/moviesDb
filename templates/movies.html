@@ -1,10 +1,13 @@
 <div class='movies-list'>
 	<div class='jumbotron' ng-show='loading'><h1>Loading.....</h1></div>
 	<h1>{{title}}</h1>
-	<h2>Comming this Friday: {{nextFridaysDate | date:'longDate'}}</h2>
-	<div class='row'>
-		<div class='movie-item' ng-repeat="movie in movieList">
-			<movie-info-box info="movie"></movie-info-box>
+
+	<div ng-repeat="(key,val) in movieList">
+		<h3>{{key|date:'mediumDate'}}</h3>
+		<div class='row'>
+			<div class='movie-item' ng-repeat="movie in val">
+				<movie-info-box info="movie"></movie-info-box>
+			</div>
 		</div>
 	</div>
 </div>
