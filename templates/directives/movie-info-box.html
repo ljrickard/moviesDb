@@ -1,7 +1,8 @@
 <div class="panelpanel-default"	ng-controller="ModalDemoCtrl">
 	<img ng-click="open(movie.id)" 
 		 class='img-responsive'	
-		 ng-src="http://image.tmdb.org/t/p/w370/{{movie.poster_path}}">	
+		 ng-src="http://image.tmdb.org/t/p/w370/{{movie.poster_path}}"
+		 err-src='img/image-not-available.jpg'>	
 	<div class="panel-heading">
 		<h3 class="panel-title">{{movie.title}}</h3>
 	</div>
