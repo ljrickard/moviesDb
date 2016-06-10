@@ -1,7 +1,7 @@
 angular.module('movieDBControllers')
     .controller('MovieUpcomingController', function($scope, _, MovieService, myMovieConfig) {
         $scope.loading = true;
-        $scope.title = 'Upcoming Movies'
+        $scope.title = 'Upcoming Movies'       
         var url = myMovieConfig.moviesEndpoint + '/upcoming?api_key=' + myMovieConfig.apiKey;
 
         function releaseDate(a,b){
@@ -20,6 +20,7 @@ angular.module('movieDBControllers')
             $scope.movieList = result;
         }
 
+        // I dont understand why this is here
         $scope.loading = false;
 
         MovieService.getList(url)

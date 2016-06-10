@@ -2,6 +2,7 @@
 angular.module('moviesDBApp', [
 	'ngRoute',
 	'movieDBControllers', // container of controllers
+	'modalModule',
 	'movieDBDirectives',
 	'movieDBServices'
 	])
@@ -16,10 +17,6 @@ angular.module('moviesDBApp', [
 		  	templateUrl: 'templates/movies.html',
 			controller: 'MovieUpcomingController'
 		  })
-		 .when("/movie/:movieId", {
-			templateUrl: 'templates/movie-detail.html',
-			controller: "MovieDetailsController"
-		})
 		  .otherwise({redirectTo: '/upcoming'}); 
 	});
 
