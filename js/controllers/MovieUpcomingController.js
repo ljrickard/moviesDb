@@ -16,15 +16,14 @@ angular.module('movieDBControllers')
             return _.groupBy(result, 'release_date');
         }
 
-        function replaceDatesWithDays(result){
-            var todaysDate=new Date();
-
-            for(var key in result){
-                if(calculateDifferenceFromToday(new Date(key))<=7){
-                    key=getDayAsString(new Date(key).getDay());
-                }
+        function getNameDate(date){
+            
+            if(calculateDifferenceFromToday(new Date(date))<=7){
+                return getDayAsString(new Date(date).getDay());
             }
-            return result;
+            else{
+                return date;
+            }
         }
 
         function calculateDifferenceFromToday(date){
@@ -54,6 +53,7 @@ angular.module('movieDBControllers')
 
         function assignMoviesToScope(result){
             $scope.movieList = result;
+            $scope.getNameDate = getNameDate;
         }
 
         // I dont understand why this is here
