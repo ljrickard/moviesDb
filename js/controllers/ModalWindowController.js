@@ -1,6 +1,5 @@
 angular.module('modalModule',['ui.bootstrap'])
 	.controller('ModalDemoCtrl', function ($scope , $modal ) {
-		console.log('ModalDemoCtrl');
 		$scope.open = function (movieId) {
 			var modalInstance = $modal.open({
 			  templateUrl: 'customContentModal.html',
@@ -18,6 +17,8 @@ angular.module('modalModule',['ui.bootstrap'])
 	})
 	.controller('ModalInstanceCtrl', function ($scope, $rootScope, $modalInstance, 
 												params, MovieService, myMovieConfig) {
+
+    console.log(params.movieId);
 
 	var movieDetailsUrl = myMovieConfig.moviesEndpoint + '/' + params.movieId + '?api_key=' + 
 								myMovieConfig.apiKey + '&append_to_response=releases,trailers';

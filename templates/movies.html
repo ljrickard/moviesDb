@@ -4,6 +4,7 @@
 
 	<div ng-repeat="(key,val) in movieList">
 		<h3>{{key|date:'mediumDate'}}</h3>
+		<!-- <h3>{{ getNameDate(key) }}</h3> -->
 		<div class='row'>
 			<div class='movie-item' ng-repeat="movie in val">
 				<movie-info-box info="movie"></movie-info-box>
